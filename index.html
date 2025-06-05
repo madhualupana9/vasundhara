@@ -3,709 +3,429 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Spark | Digital Marketing & Software Solutions</title>
-    
+    <title>Panchajanya Eco Villages – DRR Premium County</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <style>
-        :root {
-            --primary-yellow: #FFD600;
-            --primary-purple: #A58EFF;
-            --deep-purple: #6C63FF;
-            --dark-text: #111111;
-            --light-text: #888888;
-            --bg-color: #F9F8FF;
-            --card-bg: #FFFFFF;
+    :root {
+        --primary-color: #2e7d32;
+        --secondary-color: #81c784;
+        --accent-color: #ffab00;
+        --dark-color: #1b5e20;
+        --light-color: #f1f8e9;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        transition: all 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.scrolled {
+        background-color: rgba(46, 125, 50, 0.95) !important;
+        padding: 5px 0;
+    }
+
+    .navbar.scrolled .nav-link {
+        color: white !important;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled .navbar-brand img {
+        height: 40px;
+    }
+
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/DJI_0801786.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-family: 'Poppins', sans-serif; /* <-- Explicit font declaration */
+    }
+
+    .hero-section h1,
+    .hero-section h2,
+    .hero-section p,
+    .hero-section a {
+        font-family: 'Poppins', sans-serif; /* <-- Ensures consistency */
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Rest of your CSS remains unchanged below... */
+    .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 50px;
+        color: var(--dark-color);
+    }
+
+    .section-title:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: var(--accent-color);
+        bottom: -10px;
+        left: 25%;
+    }
+
+    .feature-card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        background-color: white;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .price-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .price-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .price-amount {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .gallery-item {
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item img {
+        transition: all 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--dark-color);
+        border-color: var(--dark-color);
+        transform: translateY(-3px);
+    }
+
+    footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 50px 0 20px;
+    }
+
+    .social-icon {
+        color: #186500;
+        font-size: 1.5rem;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+        color: var(--accent-color);
+        transform: translateY(-5px);
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background-color: var(--dark-color);
+        transform: translateY(-5px);
+    }
+
+    .map-container {
+        height: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: var(--secondary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 10px;
+    }
+
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -12px;
+        background-color: white;
+        border: 4px solid var(--primary-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        left: 50%;
+    }
+
+    .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid var(--secondary-color);
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--secondary-color);
+    }
+
+    .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid var(--secondary-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--secondary-color) transparent transparent;
+    }
+
+    .right::after {
+        left: -12px;
+    }
+
+    .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 768px) {
+        .timeline::after {
+            left: 31px;
         }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--dark-text);
-            overflow-x: hidden;
-        }
-        
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            background-color: white !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            padding: 10px 0;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-yellow);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
+
+        .timeline-item {
             width: 100%;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-yellow);
-            color: var(--dark-text);
-            border: none;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 214, 0, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 214, 0, 0.4);
-            background-color: var(--primary-yellow);
-        }
-        
-        .btn-outline {
-            border: 2px solid var(--primary-yellow);
-            color: var(--dark-text);
-            background: transparent;
-            font-weight: 600;
-            padding: 10px 25px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary-yellow);
-            color: var(--dark-text);
-            transform: translateY(-3px);
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-purple) 100%);
-            padding: 120px 0 80px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 4px;
-            background: var(--primary-yellow);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        .section-title.center:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            height: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-purple) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-        
-        .service-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-purple) 100%);
-            padding: 80px 0;
-            color: white;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin: 15px;
-            position: relative;
-        }
-        
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 5rem;
-            color: rgba(108, 99, 255, 0.1);
-            font-family: serif;
-            line-height: 1;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .client-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .client-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-        
-        .client-name {
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-        
-        .client-role {
-            font-size: 0.9rem;
-            color: var(--light-text);
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-purple) 100%);
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .cta-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .footer {
-            background: #111;
-            color: white;
-            padding: 80px 0 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .footer-title:after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 3px;
-            background: var(--primary-yellow);
-            bottom: -8px;
-            left: 0;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary-yellow);
-            color: var(--dark-text);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            margin-top: 40px;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        /* Animation classes */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.8rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.3rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-        }
-        
-        /* Custom shapes and decorations */
-        .shape {
-            position: absolute;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .shape-circle {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(255, 214, 0, 0.1);
-        }
-        
-        .shape-wave {
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCI+PHBhdGggZmlsbD0iI2Y5ZjhmZiIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNMCwyNTZWMTI4TDE0NCwwTDI4OCwxNjBMNDMyLDY0TDU3NiwxOTJMNzIwLDY0TDg2NCwxOTJMMTAwOCw2NEwxMTUyLDE5MkwxMjk2LDY0TDE0NDAsMTkyTDE0NDAsMzIwTDAsczMyMHoiLz48L3N2Zz4=');
-            background-size: cover;
-        }
-        
-        /* Team member cards */
-        .team-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .team-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .team-info {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .team-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .team-role {
-            color: var(--light-text);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Case study cards */
-        .case-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .case-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .case-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .case-info {
-            padding: 20px;
-        }
-        
-        .case-title {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .case-desc {
-            color: var(--light-text);
-            margin-bottom: 15px;
-        }
-        
-        /* Contact form */
-        .contact-form {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        
-        .form-control {
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #eee;
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--primary-purple);
-        }
-        
-        textarea.form-control {
-            height: auto;
-            padding-top: 15px;
-        }
-        
-        /* Map container */
-        .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            height: 100%;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            border: none;
-        }
-        
-        /* Blog cards */
-        .blog-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .blog-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .blog-info {
-            padding: 20px;
-        }
-        
-        .blog-date {
-            color: var(--primary-purple);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        
-        .blog-title {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .blog-excerpt {
-            color: var(--light-text);
-            margin-bottom: 15px;
-        }
-        
-        /* Audit form */
-        .audit-form {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        
-        /* Service details page */
-        .service-detail {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        
-        .service-feature {
-            margin-bottom: 30px;
-        }
-        
-        .feature-icon {
-            color: var(--deep-purple);
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        
-        .feature-title {
-            font-weight: 600;
-            margin-bottom: 10px;
+            padding-left: 70px;
+            padding-right: 25px;
         }
 
-        .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: var(--deep-purple);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 999;
-}
+        .timeline-item::before {
+            left: 60px;
+            border: medium solid var(--secondary-color);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--secondary-color) transparent transparent;
+        }
 
-.back-to-top:hover {
-    background: var(--primary-purple);
-    transform: translateY(-5px);
-}
+        .left::after, .right::after {
+            left: 18px;
+        }
 
-/* Testimonial Carousel Specific Styles */
-.testimonials-carousel {
-    padding: 20px 0;
-}
+        .right {
+            left: 0%;
+        }
+    }
 
-.testimonials-carousel .owl-stage {
-    display: flex;
-    align-items: stretch;
-}
+    .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 400px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
 
-.testimonials-carousel .owl-item {
-    display: flex;
-    height: auto;
-}
+    .parallax::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
 
-.testimonials-carousel .owl-dots {
-    margin-top: 30px;
-    text-align: center;
-}
+    .parallax-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 0 20px;
+    }
 
-.testimonials-carousel .owl-dot span {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    background: #ddd;
-    display: block;
-    transition: all 0.3s ease;
-    border-radius: 50%;
-}
+    .counter-item {
+        text-align: center;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
 
-.testimonials-carousel .owl-dot.active span {
-    background: var(--deep-purple);
-    transform: scale(1.2);
-}
+    .counter-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
 
-html, body {
+    .counter {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+
+    .counter-label {
+        font-size: 1.2rem;
+        color: var(--dark-color);
+    }
+
+    .plot-image-container {
     height: 100%;
-}
-#root { /* or whatever your main container is */
-    min-height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-.footer {
-    margin-top: auto;
+
+.plot-image-container img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
 }
-    </style>
+
+.image-caption {
+    font-style: italic;
+    color: #666;
+}
+</style>
+
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <h2 class="m-0" style="font-weight: 700; color: var(--deep-purple);">INFINITY SPARK</h2>
+            <a class="navbar-brand" href="#home">
+                <img src="https://panchajanyaecovillages.com/assets/imgs/logo/logo-black.svg" alt="Panchajanya Eco Villages Logo" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -713,33 +433,25 @@ html, body {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="marketing-solutions.html">Digital Marketing</a></li>
-                            <li><a class="dropdown-item" href="#">Web Development</a></li>
-                            <li><a class="dropdown-item" href="#">Mobile Apps</a></li>
-                            <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
-                        </ul>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="success-stories.html">Success Stories</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about-us.html">About Us</a>
+                        <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meet-the-team.html">Our Team</a>
+                        <a class="nav-link" href="#location">Location</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="#pricing">Pricing</a>
                     </li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <a class="btn btn-primary" href="free-audit.html">Free Audit</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -747,364 +459,501 @@ html, body {
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="shape shape-circle" style="top: -150px; right: -150px;"></div>
+    <section id="home" class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="hero-title animate__animated animate__fadeInDown">Ignite Your Brand's Infinite Potential</h1>
-                    <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">From the seed of an idea to a flourishing reality, we specialize in bringing out the best in your brand.</p>
-                    <a href="#services" class="btn btn-primary btn-lg animate__animated animate__fadeIn animate__delay-2s pulse">Discover Our Work</a>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <img src="https://via.placeholder.com/600x500" alt="Digital Marketing" class="img-fluid float animate__animated animate__fadeIn animate__delay-1s" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-                </div>
+            <div class="hero-content animate__animated animate__fadeIn">
+                <h1 class="display-3 fw-bold mb-4" data-aos="fade-down">Welcome to Panchajanya Eco Villages</h1>
+                <h2 class="display-6 mb-5" data-aos="fade-down" data-aos-delay="200">DRR Premium County</h2>
+                <p class="lead mb-5" data-aos="fade-up" data-aos-delay="400">Experience Sustainable Living Amidst Nature's Serenity</p>
+                <a href="#contact" class="btn btn-primary btn-lg px-4 py-2 animate__animated animate__pulse animate__infinite" data-aos="fade-up" data-aos-delay="600">Enquire Now</a>
             </div>
         </div>
-        <div class="shape-wave" style="bottom: 0; left: 0;"></div>
     </section>
 
     <!-- About Section -->
-    <section class="py-5 bg-white">
+    <section id="about" class="py-5 bg-light">
         <div class="container py-5">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <img src="https://via.placeholder.com/500x400" alt="About Us" class="img-fluid rounded-3 shadow">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title">About Our Eco Village</h2>
+                    <p class="lead">Nestled in the tranquil environs of Maheshwaram, Ranga Reddy District, DRR Premium County offers a harmonious blend of eco-friendly living and modern amenities.</p>
+                    <p>Designed for those who value sustainability without compromising on comfort, our community is a testament to thoughtful planning and environmental consciousness.</p>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle me-3 text-success fs-4"></i>
+                            <span>HMDA-Approved Layout</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle me-3 text-success fs-4"></i>
+                            <span>Vaastu-Compliant Design</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle me-3 text-success fs-4"></i>
+                            <span>Secure Gated Community</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="section-title">Your Partners in Digital Brilliance</h2>
-                    <p class="mb-4">At Infinity Spark, we don't just build brands—we craft compelling narratives that resonate across all digital channels. Our team of experts in digital branding, content marketing, and visual identity design is dedicated to creating cohesive brand experiences that captivate and convert.</p>
-                    <a href="about-us.html" class="btn btn-outline">Meet the Team</a>
+                    <div class="position-relative">
+                        <img src="/DJI_0838786.jpg" alt="Eco Village" class="img-fluid rounded shadow">
+                        <div class="position-absolute  opacity-10 rounded"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-5" style="background-color: var(--bg-color);">
+    <!-- Parallax Section -->
+    <section class="parallax" style="background-image: url('/DJI_0801786.jpg');">
+        <div class="parallax-content">
+            <div class="container">
+                <h2 class="display-4 mb-4" data-aos="fade-down">Sustainable Living Redefined</h2>
+                <p class="lead mb-5" data-aos="fade-up">Embrace a lifestyle that prioritizes sustainability and harmony with nature.</p>
+                <a href="#features" class="btn btn-outline-light btn-lg px-4" data-aos="fade-up" data-aos-delay="200">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
         <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title center">Our Services</h2>
-                <p class="lead">Tailored Solutions for Your Brand's Success</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-down">Project Highlights</h2>
+                <p class="lead" data-aos="fade-up">Thoughtfully designed for modern sustainable living</p>
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-road"></i>
                         </div>
-                        <h3 class="service-title">Technology</h3>
-                        <p>Your website is the heart of your digital identity. We blend creativity and coding to deliver exceptional websites and mobile apps.</p>
-                        <a href="#" class="btn btn-sm btn-outline mt-3">Learn More</a>
+                        <h3>Robust Infrastructure</h3>
+                        <p>Blacktop (B.T.) Roads, Underground Drainage System, Overhead Water Tank, and Avenue Plantation enhancing the green cover.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3 class="service-title">Brand Identity</h3>
-                        <p>A strong brand identity is essential for standing out. We ensure your brand resonates with elegance and impact.</p>
-                        <a href="#" class="btn btn-sm btn-outline mt-3">Learn More</a>
+                        <h3>Secure Community</h3>
+                        <p>Compound wall encompassing the entire layout with a grand entrance gate for your safety and privacy.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-search"></i>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
                         </div>
-                        <h3 class="service-title">SEO</h3>
-                        <p>From enhancing visibility to boosting engagement, we handle everything with precision to get you ranking.</p>
-                        <a href="#" class="btn btn-sm btn-outline mt-3">Learn More</a>
+                        <h3>Electricity Infrastructure</h3>
+                        <p>Equipped with transformers and street lighting for safety and convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-down">Strategic Location</h2>
+                <p class="lead" data-aos="fade-up">Situated just 0.5 km from the Outer Ring Road with excellent connectivity</p>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h3 class="mb-4">Proximity to Key Landmarks</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-4">
+                                <i class="fas fa-building me-3 text-primary fs-4"></i>
+                                <div>
+                                    <h4 class="h5">IT & Industrial Hubs</h4>
+                                    <ul class="list-unstyled">
+                                        <li>TCS Adibatla</li>
+                                        <li>Cognizant IT SEZ</li>
+                                        <li>TATA Aerospace</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-4">
+                                <i class="fas fa-tree me-3 text-primary fs-4"></i>
+                                <div>
+                                    <h4 class="h5">Recreational Spots</h4>
+                                    <ul class="list-unstyled">
+                                        <li>Eco Tourism Park</li>
+                                        <li>Future City Developments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-start mb-4">
+                        <i class="fas fa-car me-3 text-primary fs-4"></i>
+                        <div>
+                            <h4 class="h5">Accessibility</h4>
+                            <ul class="list-unstyled">
+                                <li>30-minute drive to Hi-Tech City & Gachibowli</li>
+                                <li>20-minute drive to Rajiv Gandhi International Airport</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-envelope-open-text"></i>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.263318656588!2d78.60258331535336!3d17.44712440592885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a7a7d5f1f4d%3A0x1a4a4b8b8b8b8b8b!2sMaheshwaram%2C%20Telangana!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5" data-aos="fade-up">
+                <h3 class="text-center mb-5">Why Invest in Maheshwaram?</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h4>Infrastructure & Connectivity</h4>
+                            <p>Strategic Road Links: Proximity to Srisailam Highway (NH 765), Bangalore Highway (NH-44), and the Outer Ring Road ensures seamless connectivity.</p>
+                            <p>Upcoming Expressway: The proposed six-lane expressway, Ratan Tata Road, will further enhance accessibility.</p>
                         </div>
-                        <h3 class="service-title">Email Marketing</h3>
-                        <p>We drive impactful communication through personalized email strategies that convert subscribers to customers.</p>
-                        <a href="#" class="btn btn-sm btn-outline mt-3">Learn More</a>
+                    </div>
+                    
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h4>Industrial & Employment Hubs</h4>
+                            <p>Hyderabad Pharma City: A massive 19,000-acre pharmaceutical hub under development.</p>
+                            <p>Electronic Hardware Park: An exclusive 339.75-acre park for electronic manufacturing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h4>Real Estate Growth</h4>
+                            <p>Appreciation Trends: Over the past five years, property values have increased by 10–15% annually.</p>
+                            <p>Affordable Entry Point: Land rates start at approximately ₹3,500 per square foot.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h4>Social Infrastructure</h4>
+                            <p>Educational Institutions: Close to renowned schools and universities.</p>
+                            <p>Healthcare Facilities: Access to major hospitals like Apollo and Yashoda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-down">Plot Sizes & Pricing</h2>
+                <p class="lead" data-aos="fade-up">Choose from a variety of plot sizes to build your dream home</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="price-card">
+                        <h3>165 Sq. Yards</h3>
+                        <div class="price-amount">₹21,00,000</div>
+                        <p>Perfect for compact eco-friendly homes</p>
+                        <a href="#contact" class="btn btn-outline-primary">Enquire Now</a>
+                    </div>
+                    
+                    <div class="price-card mt-4" data-aos="fade-up" data-aos-delay="200">
+                        <h3>278 Sq. Yards</h3>
+                        <div class="price-amount">₹30,00,000</div>
+                        <p>Ideal for medium-sized family homes</p>
+                        <a href="#contact" class="btn btn-outline-primary">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="plot-image-container">
+                        <a href="https://raw.githubusercontent.com/madhualupana9/Panchajanya/refs/heads/main/design.jpg" target="_blank">
+                        <img src="https://raw.githubusercontent.com/madhualupana9/Panchajanya/refs/heads/main/design.jpg" alt="Plot Layout Design" class="img-fluid rounded shadow"></a>
+                        <div class="image-caption text-center mt-3">Our Premium Plot Layout</div>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-5" data-aos="fade-up">
-                <a href="marketing-solutions.html" class="btn btn-primary">View All Services</a>
+                <p class="text-muted">Note: Prices are subject to change. Please contact us for the latest updates.</p>
+                <a href="#contact" class="btn btn-primary mt-3">Contact For Full Price List</a>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
+    <section class="py-5 bg-primary text-white">
+        <div class="container py-5">
             <div class="row text-center">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-item">
-                        <div class="stat-number">250+</div>
-                        <div class="stat-label">Happy Clients</div>
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="counter-item">
+                        <div class="counter">500+</div>
+                        <div class="counter-label">Happy Residents</div>
                     </div>
                 </div>
+                
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Projects Completed</div>
+                    <div class="counter-item">
+                        <div class="counter">100%</div>
+                        <div class="counter-label">HMDA Approved</div>
                     </div>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Team Members</div>
-                    </div>
-                </div>
+                
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Client Satisfaction</div>
+                    <div class="counter-item">
+                        <div class="counter">24/7</div>
+                        <div class="counter-label">Security</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="600">
+                    <div class="counter-item">
+                        <div class="counter">10+</div>
+                        <div class="counter-label">Years Experience</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Success Stories Section -->
-    <section class="py-5 bg-white">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-light">
         <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title center">Success Stories</h2>
-                <p class="lead">Celebrating partnerships that add infinite splashes of creativity to our galaxy</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-down">Gallery</h2>
+                <p class="lead" data-aos="fade-up">Visuals showcasing the lush landscapes and infrastructure</p>
             </div>
             
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="case-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 1" class="case-img">
-                        <div class="case-info">
-                            <h3 class="case-title">Star Hospitals Portal</h3>
-                            <p class="case-desc">Building an efficient appointment management experience for healthcare providers.</p>
-                            <a href="#" class="btn btn-sm btn-outline">Read Case Study</a>
-                        </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eco Village" class="img-fluid rounded">
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="case-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 2" class="case-img">
-                        <div class="case-info">
-                            <h3 class="case-title">E-Commerce Solution</h3>
-                            <p class="case-desc">Enabling e-commerce driven solutions for small ventures to scale online.</p>
-                            <a href="#" class="btn btn-sm btn-outline">Read Case Study</a>
-                        </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eco Village" class="img-fluid rounded">
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="case-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 3" class="case-img">
-                        <div class="case-info">
-                            <h3 class="case-title">TeleMedicine App</h3>
-                            <p class="case-desc">Fostering better healthcare access in rural areas through technology.</p>
-                            <a href="#" class="btn btn-sm btn-outline">Read Case Study</a>
-                        </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eco Village" class="img-fluid rounded">
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-4" data-aos="fade-up">
-                <a href="success-stories.html" class="btn btn-primary">View All Success Stories</a>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eco Village" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eco Village" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eco Village" class="img-fluid rounded">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-<section class="py-5" style="background-color: var(--bg-color);">
-    <div class="container py-5">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="section-title center">What Our Clients Say</h2>
-        </div>
-        
-        <div class="row">
-            <div class="col-12">
-                <div class="testimonials-carousel owl-carousel owl-theme">
-                    <div class="testimonial-card" data-aos="fade-up">
-                        <p class="testimonial-text">Infinity Spark transformed our digital presence completely. Their team understood our vision and delivered beyond our expectations. The website they built has significantly increased our online bookings.</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/50" alt="Client" class="client-img">
-                            <div>
-                                <h4 class="client-name">Dr. Rajesh Kumar</h4>
-                                <p class="client-role">CEO, Star Hospitals</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card" data-aos="fade-up">
-                        <p class="testimonial-text">The SEO strategy implemented by Infinity Spark took our organic traffic to new heights. Their attention to detail and regular reporting kept us informed throughout the process. Highly recommended!</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/50" alt="Client" class="client-img">
-                            <div>
-                                <h4 class="client-name">Priya Sharma</h4>
-                                <p class="client-role">Marketing Director, Naviam Foods</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card" data-aos="fade-up">
-                        <p class="testimonial-text">Working with Infinity Spark on our brand identity was a game-changer. They captured our essence perfectly and delivered a comprehensive branding package that we use across all touchpoints.</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/50" alt="Client" class="client-img">
-                            <div>
-                                <h4 class="client-name">Arjun Patel</h4>
-                                <p class="client-role">Founder, The Culinary Lounge</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Blog Section -->
-    <section class="py-5 bg-white">
+    <!-- Why Choose Us Section -->
+    <section class="py-5">
         <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title center">Latest Insights</h2>
-                <p class="lead">Your source for modern & trendsetting perspectives</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-down">Why Choose DRR Premium County?</h2>
             </div>
             
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Blog Post" class="blog-img">
-                        <div class="blog-info">
-                            <p class="blog-date">Marketing • 27/07/2024</p>
-                            <h3 class="blog-title">The Digital Future ft. Infinity's Insights</h3>
-                            <p class="blog-excerpt">The future of digital marketing is no longer a mystery. With revolutionary tools and technology transforming how brands interact with audiences...</p>
-                            <a href="#" class="btn btn-sm btn-outline">Read More</a>
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
                         </div>
+                        <h3>Eco-Friendly Living</h3>
+                        <p>Embrace a lifestyle that prioritizes sustainability and harmony with nature through our thoughtfully designed community spaces.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Blog Post" class="blog-img">
-                        <div class="blog-info">
-                            <p class="blog-date">Technology • 16/06/2024</p>
-                            <h3 class="blog-title">Balancing Innovation and Intellect</h3>
-                            <p class="blog-excerpt">How Tech Startups Can Leverage AI Tools Without Losing Creative Thinking in today's rapidly evolving tech landscape...</p>
-                            <a href="#" class="btn btn-sm btn-outline">Read More</a>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
                         </div>
+                        <h3>Community-Centric Design</h3>
+                        <p>Our layout fosters social connections with shared green spaces, walking trails, and community gathering areas.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Blog Post" class="blog-img">
-                        <div class="blog-info">
-                            <p class="blog-date">Marketing • 22/07/2024</p>
-                            <h3 class="blog-title">From Tales to Brand Fairytales</h3>
-                            <p class="blog-excerpt">How Storytelling Shapes Brand Marketing and why every brand needs a story to stand out in the digital noise...</p>
-                            <a href="#" class="btn btn-sm btn-outline">Read More</a>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
+                        <h3>Investment Potential</h3>
+                        <p>Located in a rapidly developing corridor with increasing property values and excellent future growth prospects.</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-4" data-aos="fade-up">
-                <a href="#" class="btn btn-primary">View All Blog Posts</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="shape shape-circle" style="bottom: -100px; left: -100px;"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <h2 class="cta-title">Ready to Spark Your Brand's Infinity?</h2>
-                    <p class="cta-subtitle">Let's create something extraordinary together. Whether you're looking to build a new website, launch a marketing campaign, or develop a custom software solution, our team is ready to help.</p>
-                    <a href="contact.html" class="btn btn-primary btn-lg me-3">Contact Us</a>
-                    <a href="free-audit.html" class="btn btn-outline btn-lg">Free Audit</a>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title mb-4">Contact Us</h2>
+                    <div class="mb-4">
+                        <h4 class="h5">Address</h4>
+                         <p><b>Branch office</b><br>
+                        1-5-1003/190, Nava Bharath , Cooperative Pakalakunta,<br>
+                        Old Alwal,Hyderabad, Telangana,India – 500010.</p>
+
+                        <p><b>Corporate office</b><br>
+                        C9WX+HH8, Kakatiya Hills, Guttala_Begumpet,<br>
+                        Kavuri Hills, Madhapur, Hyderabad, Telangana 500033</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="h5">Phone</h4>
+                        <p>+91 91009 99099</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="h5">Email</h4>
+                        <p>panchajanyaecovillages@gmail.com</p>
+                    </div>
+                    
+                    <div class="social-links mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Enquire Now</h3>
+                        <p>Interested in being a part of our eco-friendly community? Fill out the form below, and our team will get in touch with you.</p>
+                        
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-select">
+                                        <option selected disabled>Interested In</option>
+                                        <option>140 Sq. Yards</option>
+                                        <option>200 Sq. Yards</option>
+                                        <option>300 Sq. Yards</option>
+                                        <option>Custom Plot</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up">
-                    <h3 class="footer-title">INFINITY SPARK</h3>
-                    <p>We craft brand identities that are clear, memorable, and impactful. Our approach ensures your brand shines brightly and leaves a lasting impression.</p>
-                    <div class="social-links mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <img src="https://panchajanyaecovillages.com/assets/imgs/logo/logo-black.svg" alt="Logo" class="mb-3">
+                    <p>Experience Sustainable Living Amidst Nature's Serenity at DRR Premium County.</p>
                 </div>
                 
-                <div class="col-lg-2 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="marketing-solutions.html">Services</a></li>
-                        <li><a href="success-stories.html">Success Stories</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#features" class="text-white">Features</a></li>
+                        <li><a href="#pricing" class="text-white">Pricing</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="col-lg-2 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">SEO</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Branding</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="footer-title">Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Plot No. 328, Road No. 07, Kakatiya Hills, Madhapur, Hyderabad - 500081, Telangana, India</li>
-                        <li><i class="fas fa-phone-alt me-2"></i> +91 784 2622 997</li>
-                        <li><i class="fas fa-envelope me-2"></i> connect@infinityspark.in</li>
-                    </ul>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on our eco village project.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-light" type="submit">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             
-            <div class="copyright text-center" data-aos="fade-up">
-                <p class="mb-0">&copy; 2024 Infinity Spark. All Rights Reserved.</p>
+            <hr class="my-4 bg-light">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Panchajanya Eco Villages. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" style="display: inline;">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-   <!-- Load jQuery first -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Then Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Then other plugins -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script>
         // Initialize AOS animation
@@ -1118,84 +967,82 @@ html, body {
         $(window).scroll(function() {
             if ($(this).scrollTop() > 100) {
                 $('.navbar').addClass('scrolled');
-                $('.back-to-top').fadeIn('slow');
             } else {
                 $('.navbar').removeClass('scrolled');
-                $('.back-to-top').fadeOut('slow');
             }
         });
+        
+        // Smooth scrolling for navigation links (excluding back-to-top)
+$('a[href*="#"]').not('.back-to-top').on('click', function(e) {
+    e.preventDefault();
+    
+    var target = $(this).attr('href');
+    if (target === '#') return; // Skip empty hash
+    
+    $('html, body').animate(
+        {
+            scrollTop: $(target).offset().top - 70,
+        },
+        500,
+        'linear'
+    );
+});
         
         // Back to top button
-        $('.back-to-top').click(function() {
-            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-            return false;
-        });
-        
-        // Testimonial carousel
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 30,
-            nav: false,
-            dots: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                992: {
-                    items: 3
-                }
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
             }
         });
         
-        // Smooth scrolling for navigation links
-        $('a[href*="#"]').on('click', function(e) {
+        $('.back-to-top').on('click', function(e) {
             e.preventDefault();
-            
-            $('html, body').animate(
-                {
-                    scrollTop: $($(this).attr('href')).offset().top - 70,
-                },
-                500,
-                'linear'
-            );
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Counter animation
+        $(window).scroll(function() {
+            $('.counter').each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                
+                if ($(window).scrollTop() > $(this).offset().top - 600) {
+                    $({ countNum: $this.text()}).animate({
+                        countNum: countTo
+                    },
+                    {
+                        duration: 2000,
+                        easing:'swing',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                        }
+                    });
+                }
+            });
         });
 
-        // Initialize AOS animation
-document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 120
-    });
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector(".navbar");
+        const logo = document.querySelector(".navbar-brand img");
+        const originalLogo = "https://panchajanyaecovillages.com/assets/imgs/logo/logo-black.svg";
+        const scrolledLogo = "https://panchajanyaecovillages.com/assets/imgs/logo/logo-white.svg";
 
-// Testimonial carousel
-$(document).ready(function(){
-    $('.testimonials-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        nav: false,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+                logo.src = scrolledLogo;
+            } else {
+                navbar.classList.remove("scrolled");
+                logo.src = originalLogo;
             }
-        }
+        });
     });
-});
+
     </script>
 </body>
 </html>
